@@ -6,6 +6,7 @@ if ('serviceWorker' in navigator) {
         .then(function () {
             console.log('register ready');
             navigator.serviceWorker.ready.then(function (serviceWorkerRegistration) {
+                console.log('ready ready');
                 serviceWorkerRegistration.pushManager
                     .subscribe()
                     .then(function (subscription) {
@@ -15,6 +16,9 @@ if ('serviceWorker' in navigator) {
                         console.log(err);
                     })
             })
+                .catch(function (err) {
+                    console.log(err);
+                })
         })
         .catch(function (err) {
             console.log(err);
