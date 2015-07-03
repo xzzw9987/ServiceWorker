@@ -4,9 +4,7 @@
 self.addEventListener('install', function (event) {
     console.log('install');
     var cachesUrl = [
-        './',
         './index.html',
-        './src',
         './src/main.js'
     ];
     event.waitUntil(function () {
