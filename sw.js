@@ -99,7 +99,12 @@ self.addEventListener('install', function (event) {
     );
 });
 self.addEventListener('fetch', function (event) {
-    event.respondWith(caches.match(event.request).catch(function () {
-        return fetch(event.request);
-    }));
+    event.respondWith(caches.match(event.request)
+        .then(function (data) {
+            if (!data)
+                return fetch(event.request);
+        })
+        .catch(function () {
+            return fetch(event.request);
+        }));
 });
