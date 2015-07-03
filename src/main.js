@@ -4,9 +4,9 @@
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js')
         .then(function (serviceWorkerRegistration) {
-            console.log(serviceWorkerRegistration.scope);
+            serviceWorkerRegistration.pushManager.subscribe()
+                .then(function (subscription) {
+                    console.log(subscription);
+                });
         })
-        .catch(function (err) {
-            console.log(err);
-        });
 }

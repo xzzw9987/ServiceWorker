@@ -80,7 +80,7 @@ if (!Cache.prototype.addAll) {
         });
     };
 }
-
+/**
 self.addEventListener('install', function (event) {
     console.log('install');
     var cachesUrl = [
@@ -108,4 +108,12 @@ self.addEventListener('fetch', function (event) {
         .catch(function () {
             return fetch(event.request);
         }));
+});
+ **/
+
+self.addEventListener('push', function (event) {
+    console.log(event);
+    self.registration.showNotification('Message from push api', {
+        body: 'HOLA!'
+    });
 });
