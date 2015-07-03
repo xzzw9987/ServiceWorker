@@ -3,14 +3,13 @@
  */
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js')
-        .then(function (serviceWorkerRegistration) {
-            console.log(serviceWorkerRegistration.pushManager);
-            serviceWorkerRegistration.pushManager.subscribe()
-                .then(function (subscription) {
-                    console.log(subscription);
-                })
-                .catch(function (err) {
-                    console.log(err);
-                });
+        .then(function () {
+            navigator.serviceWorker.ready.then(function (serviceWorkerRegistration) {
+                serviceWorkerRegistration.pushManager
+                    .subscribe()
+                    .then(function (subscription) {
+                        console.log(subscription);
+                    })
+            });
         })
 }
