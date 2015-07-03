@@ -4,8 +4,8 @@
 self.addEventListener('install', function (event) {
     console.log('install');
     var cachesUrl = [
-        './index.html',
-        './src/main.js'
+        '/ServiceWorker/index.html',
+        '/ServiceWorker/src/main.js'
     ];
     event.waitUntil(function () {
         caches.open('v1')
