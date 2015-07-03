@@ -7,7 +7,7 @@ self.addEventListener('install', function (event) {
         '/ServiceWorker/index.html',
         '/ServiceWorker/src/main.js'
     ];
-    event.waitUntil(function () {
+    event.waitUntil(
         caches.open('v1')
             .then(function (cache) {
                 console.log('kkkk');
@@ -15,8 +15,8 @@ self.addEventListener('install', function (event) {
             })
             .catch(function (e) {
                 console.log(e);
-            });
-    });
+            })
+    );
 });
 self.addEventListener('fetch', function (event) {
     console.log('fetch');
