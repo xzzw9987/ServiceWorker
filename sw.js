@@ -11,11 +11,16 @@ self.addEventListener('install', function (event) {
         caches.open('v1')
             .then(function (cache) {
                 return cache.addAll(cachesUrl);
+            })
+            .then(function () {
+                console.log(cache.keys());
             });
     });
 });
 self.addEventListener('fetch', function (event) {
     console.log('fetch');
     console.log(event.request.url);
-    event.respondWith(caches.match(event.request).then(function(data){console.log(data)}));
+    event.respondWith(caches.match(event.request).then(function (data) {
+        console.log(data)
+    }));
 });
