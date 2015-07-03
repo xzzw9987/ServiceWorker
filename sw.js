@@ -4,7 +4,7 @@
 self.addEventListener('install', function (event) {
     console.log('install');
     var cachesUrl = [
-        '/Service',
+        './',
         './index.html',
         './src',
         './src/main.js'
