@@ -8,6 +8,9 @@ if ('serviceWorker' in navigator) {
             serviceWorkerRegistration.pushManager.subscribe()
                 .then(function (subscription) {
                     console.log(subscription);
+                })
+                .catch(function (err) {
+                    console.log(err);
                 });
         })
 }
