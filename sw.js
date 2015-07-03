@@ -13,8 +13,8 @@ self.addEventListener('install', function (event) {
                 console.log('kkkk');
                 return cache.addAll(cachesUrl);
             })
-            .then(function () {
-                console.log(cache.keys());
+            .catch(function (e) {
+                console.log(e);
             });
     });
 });
