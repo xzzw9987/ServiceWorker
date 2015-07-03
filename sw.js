@@ -84,8 +84,8 @@ if (!Cache.prototype.addAll) {
 self.addEventListener('install', function (event) {
     console.log('install');
     var cachesUrl = [
-        '/ServiceWorker/index.html',
-        '/ServiceWorker/src/main.js'
+        './index.html',
+        './src/main.js'
     ];
     event.waitUntil(
         caches.open('v1')
