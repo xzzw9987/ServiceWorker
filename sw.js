@@ -103,6 +103,7 @@ self.addEventListener('fetch', function (event) {
         .then(function (data) {
             if (!data)
                 return fetch(event.request);
+            else return data;
         })
         .catch(function () {
             return fetch(event.request);
