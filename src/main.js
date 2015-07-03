@@ -6,7 +6,7 @@ if ('serviceWorker' in navigator) {
         .then(function (a) {
             console.log(a);
         })
-        .cathc(function (err) {
+        .catch(function (err) {
             console.log(err);
         });
 }
