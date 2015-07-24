@@ -1,5 +1,5 @@
 /**
- * Created by baidu on 15/7/3.
+ * Created by xinzhongzhu on 15/7/3.
  */
 /**
  * Copyright 2015 Google Inc. All rights reserved.
@@ -81,7 +81,7 @@ if (!Cache.prototype.addAll) {
     };
 }
 /**
-self.addEventListener('install', function (event) {
+ self.addEventListener('install', function (event) {
     console.log('install');
     var cachesUrl = [
         './index.html',
@@ -98,7 +98,7 @@ self.addEventListener('install', function (event) {
             })
     );
 });
-self.addEventListener('fetch', function (event) {
+ self.addEventListener('fetch', function (event) {
     event.respondWith(caches.match(event.request)
         .then(function (data) {
             if (!data)
