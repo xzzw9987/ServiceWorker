@@ -1,5 +1,5 @@
 /**
- * Created by baidu on 15/7/3.
+ * Created by xinzhongzhu on 15/7/3.
  */
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js')
